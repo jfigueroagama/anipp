@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset='UTF-8'>		
   <title>ANIPP</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-		    <div class="span9"><%= yield %></div>
-		    <div class="span3">
-		      <h1>Nuestros Patrocinadores</h1>
-		      <h4>Mensajes de nuestros patrocinadores</h4>     
-		    </div>	
-  		</div>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">ANIPP</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">Quienes somos</a></li>
+              <li><a href="#contact">Contactanos</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Accion</a></li>
+                  <li><a href="#">Accion</a></li>
+                  <li><a href="#">Accion</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">Navegación</li>
+                  <li><a href="#">Vínculo</a></li>
+                  <li><a href="#">Vìnculo</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-form pull-right">
+              <input class="span2" type="text" placeholder="Email">
+              <input class="span2" type="password" placeholder="Password">
+              <button type="submit" class="btn">Entrar</button>
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+	<div class='container'>
+		<%= yield %>
 	</div>
 </body>
 </html>
