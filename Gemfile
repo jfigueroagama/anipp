@@ -19,11 +19,15 @@ end
 
 gem 'therubyracer'
 gem 'less-rails'
-
 gem 'jquery-rails'
+gem 'bcrypt-ruby', '3.0.1'
 
 group :test, :development do
 	gem 'rspec-rails', '2.11.0'
+end
+
+group :development do
+	gem 'annotate', '2.5.0'
 end
 
 group :test do

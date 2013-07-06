@@ -19,10 +19,11 @@
           <a class="brand" href="#">ANIPP</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
+              <li class="active"><%= link_to "Home", root_path %></li>
               <li><a href="#about">Quienes somos</a></li>
               <li><a href="#directorio">Directorio</a></li>
               <li><a href="#contact">Contactanos</a></li>
+              <li><%= link_to "Registro Instructoras", signup_path %></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
                 <ul class="dropdown-menu">
