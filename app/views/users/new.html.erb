@@ -1,0 +1,21 @@
+<div class="container">   
+      <div class="form-signin">
+        <h2 class="form-signin-heading">Registro Instructoras</h2>
+	    <%= form_for @user, url: users_path do |f| %>
+	    	<%= render 'shared/error_messages' %>
+	        <%= f.label :name, "Nombre" %>
+	        <%= f.text_field :name, class: "input-block-level" %>
+
+	        <%= f.label :email, "Correo" %>
+	        <%= f.text_field :email, class: "input-block-level" %>
+
+	        <%= f.label :password, "Password" %>
+	        <%= f.password_field :password, class: "input-block-level" %>
+
+	        <%= f.label :password_confirmation, "Confirme Password" %>
+	        <%= f.password_field :password_confirmation, class: "input-block-level" %>
+
+	        <%= f.submit "Registrar Instructora", class: "btn btn-large btn-primary" %>      
+        <% end %>
+       </div>
+</div> <!-- /container -->

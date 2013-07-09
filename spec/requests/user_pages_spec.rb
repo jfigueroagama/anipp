@@ -1,14 +1,35 @@
 require 'spec_helper'
 
 describe "User pages" do
-  subject { page }
   
-  describe "signup page" do
+  subject { page }
 
-   before { visit signup_path }
+  describe "signup"  do
 
-   it { should have_selector('h2', text: 'Registro')}
-   it { should have_selector('title', text: 'ANIPP')}
-   
+  	before { visit signup_path }
+
+  	it { should have_selector('h2', text: 'Registro')}
+    it { should have_selector('title', text: 'ANIPP')}
+ 
+  	let(:submit) { "Registrar Instructora" }
+
+  	describe "with invalid information" do
+  		it "should not create an user" do
+  			expect { click_button "Registrar Instructora" }.not_to change(User, :count) # calls count method on user object
+  		end
+  	end
+
+  	describe "with valid information" do
+  		before do
+  			fill_in "Nombre", 		with: "Michael Hart"
+  			fill_in "Correo", 		with: "michael@example.com"
+  			fill_in "Password", 	with: "foobar"
+  			fill_in "Confirme Password", with: "foobar"
+  		end
+  		it "should create an user" do
+  			expect { click_button "Registrar Instructora" }.to change(User, :count).by(1) # calls count method on user object
+  		end
+  	end
+
   end
 end
