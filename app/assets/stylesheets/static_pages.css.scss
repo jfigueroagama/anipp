@@ -7,23 +7,30 @@ body {
 	padding-bottom: 40px;
 }
 
-.span4 {
-	width: 345px;
-}
-
-.span4 h2 {
-	color: white;
+.span4 h2{
+	color: black;
 }
 
 .span4 p {
-	color: white;
+	color: black;
+}
+
+.span4 {
+  width: 275px;
 }
 
 #home p {
 	color: white;
 }
 
-.carousel-inner h1, h4{
+#sponsors {
+  width: 1100px;
+  height: 250px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.carousel-inner h1, h4, h3{
 	color: white;
 }
 

@@ -18,30 +18,33 @@
         <div class="item">
              <%= image_tag "baby8.png", alt: "Home" %>
              <div class="carousel-caption">
-                <h4>1er Encuentro Nacional de Profesionales de Atención de Parto en Agua 11, 12, y 13 de Noviembre de 2013, Cuidad de México. Sede por confirmar. </h4>
+                <h3>1er ENCUENTRO NACIONAL DE PROFESIONALES DE ATENCIÓN DE PARTO EN AGUA</h3>
+                <h3>11, 12, y 13 de Noviembre de 2013, Cuidad de México. Sede por confirmar. </h3>
                 <br />
              </div>
         </div>
         <div class="item">
              <%= image_tag "baby5.png", alt: "Home" %>
              <div class="carousel-caption">
-                <h4>Talleres de Capacitación Continua. </h4>
+                <h3>Talleres de Capacitación Continua. </h3>
                 <br />
              </div>
         </div>
         <div class="item">
              <%= image_tag "baby6.png", alt: "Home" %>
              <div class="carousel-caption">
-                <h4>Programas de Formación: Especialidad es Educación Perinatal, Universidad Anahuac México Norte. Diplomado para Educador en Psicoprofilaxis Perinatal ENEO/UNAM con sede en CIMIGen</h4>
+                <h3>Programas de Formación: <h3/> 
+                <h4>Especialidad en Educación Perinatal, Universidad Anahuac México Norte.  <%= link_to "Especialidad Educación Perinatal", "http://pegaso.anahuac.mx/educacion" %><h4/>
+                <h4>Diplomado para Educador en Psicoprofilaxis Perinatal ENEO/UNAM con sede en CIMIGen.  <%= link_to "CIMIgen", "http://www.cimigen.org.mx" %></h4>
                 <br />
              </div>
         </div>
         <div class="item">
              <%= image_tag "baby7.png", alt: "Home" %>
              <div class="carousel-caption">
-                <h4>Únete a nosotros y paga tu cuota 2013.</h4>
+                <h3>Únete a nosotros y paga tu cuota 2013.</h3>
                 <br />
-                <p><%= link_to "Siguenos en Facebook!","http://www.facebook.com/pages/ANIPP/151789208216298?ref=hl" %>   y tambien   <%= link_to "Siguenos en Twitter!","http://www.twitter.com/ContactoAnipp" %></p>
+                <h4><%= link_to "Siguenos en Facebook!","http://www.facebook.com/pages/ANIPP/151789208216298?ref=hl" %>   y tambien   <%= link_to "Siguenos en Twitter!","http://www.twitter.com/ContactoAnipp" %></h4>
              </div>
         </div>
         
@@ -51,22 +54,30 @@
 </div>
 
 <!-- Example row of columns -->
-<div class="row">
+<div class="row" id="sponsors">
+	<br />
+	<a class="brand"><%= link_to image_tag("logoanipp.jpg", alt: "ANIPP", size: "120x120"), root_path %></a>
     <div class="span4">
         <h2>Chicco</h2>
-        <p><%= image_tag "chicco.jpg", alt: "Chicco", size: "120x120" %></p>
-        <p> </p>
-        <p><a class="btn" href="#">Detalles &raquo;</a></p>
+        <p><%= link_to image_tag("chicco.jpg", alt: "Chicco", size: "100x100"), "http://www.chicco.com.mx" %></p>
+        <br />
+        <p><a class="btn btn-primary" href="#">Detalles &raquo;</a></p>
     </div>
     <div class="span4">
-        <h2>Patrocinador</h2>
-        <p>Información del patrocinador</p>
-        <p><a class="btn" href="#">Detalles &raquo;</a></p>
-    </div>
+        <h2>CryoCell</h2>
+        <br />
+        <p><%= link_to image_tag("logoCCell.jpg", alt: "CryoCell", size: "130x120"), "http://www.cryo-cell.com.mx" %></p>
+        <br />
+        <br />
+        <p><a class="btn btn-primary" href="#">Detalles &raquo;</a></p>
+    </div> 
     <div class="span4">
-        <h2>Patrocinador</h2>
-        <p>Información del patrocinador</p>
-        <p><a class="btn" href="#">Detalles &raquo;</a></p>
+        <h2>Huggies</h2>
+        <br />
+        <p><%= link_to image_tag("Huggies.jpg", alt: "Huggies", size: "150x150"), "http://www.huggies.com.mx" %></p>
+        <br />
+        <br />
+        <p><a class="btn btn-primary" href="#">Detalles &raquo;</a></p>
     </div>
 </div>
 
