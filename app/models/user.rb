@@ -10,9 +10,11 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessible :email, :name, :password, :password_confirmation, :location_attributes
   has_secure_password
-
+  has_one :location, dependent: :destroy
+  accepts_nested_attributes_for :location, allow_destroy: true  
+  
   before_save { |user| user.email = email.downcase }
 
   validates :name, presence: true, length: { maximum: 50 }

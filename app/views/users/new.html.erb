@@ -14,7 +14,20 @@
 
 	        <%= f.label :password_confirmation, "Confirme Password" %>
 	        <%= f.password_field :password_confirmation, class: "input-block-level" %>
-
+	        
+	        <%= f.fields_for :location do |builder| %>
+	        	<fieldset>
+	        			<%= builder.label :street, "Calle y No" %>
+	        			<%= builder.text_field :street, class: "input-block-level" %>
+	        			
+	        			<%= builder.label :city, "Ciudad" %>
+	        			<%= builder.text_field :city, class: "input-block-level" %>
+	        			
+	        			<%= builder.label :state, "Estado" %>
+	        			<%= builder.select :state, class: "input-block-level" %>
+	        	</fieldset>
+	        <% end %>
+	        <br />
 	        <%= f.submit "Registrar Instructora", class: "btn btn-large btn-primary" %>      
         <% end %>
        </div>

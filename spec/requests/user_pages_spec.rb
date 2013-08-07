@@ -6,7 +6,11 @@ describe "User pages" do
 
   describe "signup"  do
 
-  	before { visit signup_path }
+  	before do
+  	  # = User.new
+  	  #@user.build_location
+  	  visit signup_path
+  	end
 
   	it { should have_selector('h2', text: 'Registro')}
     it { should have_selector('title', text: 'ANIPP')}
@@ -25,6 +29,9 @@ describe "User pages" do
   			fill_in "Correo", 		with: "michael@example.com"
   			fill_in "Password", 	with: "foobar"
   			fill_in "Confirme Password", with: "foobar"
+  			fill_in "Calle y No", with: "1213 Main St."
+  			fill_in "Ciudad",     with: "Mexico"
+  			#fill_in "Estado",     with: "Distrito Federal"
   		end
   		it "should create an user" do
   			expect { click_button "Registrar Instructora" }.to change(User, :count).by(1) # calls count method on user object

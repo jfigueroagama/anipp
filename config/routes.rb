@@ -1,7 +1,10 @@
 AnippApp::Application.routes.draw do
+  #get "locations/new"
   # get "users/new"
   # get "static_pages/home"
   resources :users
+  
+  resources :locations
 
   root to: 'static_pages#home'
 
