@@ -21,6 +21,7 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '3.0.1'
+gem 'geocoder', '~> 1.1.8'
 
 group :test, :development do
 	gem 'rspec-rails', '2.11.0'

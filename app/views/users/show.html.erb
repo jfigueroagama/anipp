@@ -3,6 +3,18 @@
 		<% flash.each do |key, value| %>
 		<div class="alert alert-<%= key %>"><%= value %></div>
 		<% end %>
-		<h2><%= @user.name %></h2>
+		<h2>Instructora:&nbsp;&nbsp;<%= @user.name %></h2>
+		<br />
+		<h3>Mapa de Localización</h3>
+		<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@user.location.latitude}%2C#{@user.location.longitude}" %>
+		<br />
+		<h3>Instructoras Cercanas:</h3>
+		<% if @user.location.nearbys.empty? %>
+			<li> No hay instructoras cercanas </li>
+		<% else %> 
+			<% for location in @user.location.nearbys(5) %>
+				<li><%= location.user.name %> &nbsp;&nbsp;&nbsp;&nbsp; <%= link_to location.address, location.user %></li>
+			<% end %>
+		<% end %>
 	</div>
 </div>

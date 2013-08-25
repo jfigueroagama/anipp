@@ -8,7 +8,7 @@ body {
       }
 
       .form-signin {
-        max-width: 450px;
+        max-width: 550px;
         padding: 19px 29px 29px;
         margin: 0 auto 20px;
         background-color: #fff;
@@ -31,6 +31,10 @@ body {
         margin-bottom: 15px;
         padding: 7px 9px;
       }
+      
+ h1, h2, h3, h4 {
+  color: black;
+}
 
 #error_explanation {
   color: #f00;
