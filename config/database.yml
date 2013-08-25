@@ -27,7 +27,6 @@ test:
 production:
   adapter: postgresql
   database: anipp_production
-  host: localhost
   pool: 5
   timeout: 5000
   username: postgres
