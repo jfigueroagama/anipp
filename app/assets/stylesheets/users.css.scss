@@ -24,6 +24,9 @@ body {
       .form-signin .checkbox {
         margin-bottom: 10px;
       }
+      .form-signin h3{
+        color: black;
+      }
       .form-signin input[type="text"],
       .form-signin input[type="password"] {
         font-size: 16px;
@@ -32,10 +35,6 @@ body {
         padding: 7px 9px;
       }
       
-h1, h2, h3, h4 {
-  color: black;
-}
-
 #error_explanation {
   color: #f00;
   ul {
