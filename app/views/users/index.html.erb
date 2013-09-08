@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="form-search">
+		<h2>Busqueda de Centros Cercanos<small> captura tu dirección</small></h2>
+		
+		<%= form_tag users_path, :method => :get do %>
+		  <p>
+		    <%= text_field_tag :search, params[:search], class: "input-block-level" %>
+		    <%= submit_tag "Buscar Centros Cercanos", :name => nil, class: "btn btn-large btn-primary" %>
+		  </p>
+		<% end %>
+		
+		<table border="1">
+		  <tr>
+		    <th><h3>&nbsp;Centro&nbsp;</h3></th>
+		    <th><h3>&nbsp;Instructora&nbsp;</h3></th>
+		    <th><h3>&nbsp;Teléfono&nbsp;</h3></th>
+		    <th><h3>&nbsp;Correo&nbsp;</h3></th>
+		    <th><h3>&nbsp;Dirección&nbsp;</h3></th>
+		  </tr>
+		
+		<% @locations.each do |location| %>
+		  <tr>
+		    <td><%= location.center_name %></td>
+		    <td><%= location.user.name %></td>
+		    <td><%= location.user.telephone %></td>
+		    <td><%= location.user.email %></td>
+		    <td><%= link_to location.address, location.user %></td>
+		  </tr>
+		<% end %>
+		</table>
+	</div>
+</div>

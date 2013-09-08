@@ -7,8 +7,6 @@ describe "User pages" do
   describe "signup"  do
 
   	before do
-  	  # = User.new
-  	  #@user.build_location
   	  visit signup_path
   	end
 
@@ -27,11 +25,11 @@ describe "User pages" do
   		before do
   			fill_in "Nombre", 		with: "Michael Hart"
   			fill_in "Correo", 		with: "michael@example.com"
+  			fill_in "Telefono",   with: "55 4368 6686"
   			fill_in "Password", 	with: "foobar"
   			fill_in "Confirme Password", with: "foobar"
   			fill_in "Calle y No", with: "1213 Main St."
   			fill_in "Ciudad",     with: "Mexico"
-  			#fill_in "Estado",     with: "Distrito Federal"
   		end
   		it "should create an user" do
   			expect { click_button "Registrar Instructora" }.to change(User, :count).by(1) # calls count method on user object

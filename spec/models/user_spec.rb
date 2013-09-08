@@ -14,13 +14,14 @@ require 'spec_helper'
 describe User do
 
   before do
-  	@user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
+  	@user = User.new(name: "Example User", email: "user@example.com", telephone: "55 4368 6686", password: "foobar", password_confirmation: "foobar")
   end
 
   subject { @user }
 
   it { should respond_to(:name)}  # respond_to? takes a symbol and returns true 
   it { should respond_to(:email)} # if the object respond to a given method or attribure
+  it { should respond_to(:telephone)}
   it { should respond_to(:password_digest)}
   it { should respond_to(:password)}
   it { should respond_to(:password_confirmation)}
@@ -36,6 +37,16 @@ describe User do
   describe "when name is too long" do
   	before { @user.name = "a" * 51 }
   	it { should_not be_valid }
+  end
+  
+  describe "when telephone is not present" do
+    before { @user.telephone = " " }
+    it { should_not be_valid }
+  end
+  
+  describe "when telephone is too long" do
+    before { @user.telephone = "a" * 15 }
+    it { should_not be_valid }
   end
 
   describe "when email is not present" do

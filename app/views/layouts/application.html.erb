@@ -5,6 +5,7 @@
   <title>ANIPP</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= yield :scripts%>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -21,7 +22,7 @@
               <li class="active"><%= link_to "ANIPP", root_path %></li>
               <li><a href="#about">Quienes somos</a></li>
               <li><a href="#directorio">Directorio</a></li>
-              <li><a href="#contact">Contactanos</a></li>
+              <li><%= link_to "Contactános", users_path %></li>
               <li><%= link_to "Registro Instructoras", signup_path %></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
@@ -47,7 +48,7 @@
     </div>
 	<div class='container'>
 		<%= yield %>
-    <%= debug(params) if Rails.env.development? %>
+    	<%= debug(params) if Rails.env.development? %>
 	</div>
   <script>
     $(document).ready(function(){

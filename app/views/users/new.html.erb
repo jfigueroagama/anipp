@@ -8,6 +8,9 @@
 
 	        <%= f.label :email, "Correo" %>
 	        <%= f.text_field :email, class: "input-block-level" %>
+	        
+	        <%= f.label :telephone, "Telefono" %>
+	        <%= f.text_field :telephone, class: "input-block-level" %>
 
 	        <%= f.label :password, "Password" %>
 	        <%= f.password_field :password, class: "input-block-level" %>
@@ -17,6 +20,9 @@
 	        
 	        <%= f.fields_for :location do |builder| %>
 	        	<fieldset>
+	        			<%= builder.label :center_name, "Nombre del Centro" %>
+	        			<%= builder.text_field :center_name, class: "input-block-level" %>
+	        			
 	        			<%= builder.label :street, "Calle y No" %>
 	        			<%= builder.text_field :street, class: "input-block-level" %>
 	        			

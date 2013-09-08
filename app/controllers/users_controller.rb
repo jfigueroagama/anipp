@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @json = @user.location.to_gmaps4rails
   end
 
   def create
@@ -20,6 +21,11 @@ class UsersController < ApplicationController
   end
 
   def index
+    if params[:search].present?
+      @locations = Location.near(params[:search], 5, :order => :distance)
+    else
+      @locations = Location.all
+    end
   end
   
 end

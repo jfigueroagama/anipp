@@ -10,7 +10,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation, :location_attributes
+  attr_accessible :email, :name, :password, :telephone, :password_confirmation, :location_attributes
   has_secure_password
   has_one :location, dependent: :destroy
   accepts_nested_attributes_for :location, allow_destroy: true  
@@ -22,4 +22,5 @@ class User < ActiveRecord::Base
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
+  validates :telephone, presence: true, length: { maximum: 14 }
 end
