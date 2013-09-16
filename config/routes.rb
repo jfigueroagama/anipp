@@ -1,16 +1,19 @@
 AnippApp::Application.routes.draw do
-  get "locations/index"
-
+  #get "locations/index"
   #get "locations/new"
   # get "users/new"
   # get "static_pages/home"
   resources :users
   
   resources :locations
+  
+  resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'static_pages#home'
 
-  match '/signup', to: 'users#new'
+  match  '/signup',  to: 'users#new'
+  get    '/signin',  to: 'sessions#new'
+  delete '/signout', to: 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

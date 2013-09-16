@@ -5,7 +5,6 @@
   <title>ANIPP</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <%= yield :scripts%>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -17,37 +16,49 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <div class="nav-collapse collapse">
+          <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><%= link_to "ANIPP", root_path %></li>
-              <li><a href="#about">Quienes somos</a></li>
-              <li><a href="#directorio">Directorio</a></li>
-              <li><%= link_to "Contactános", users_path %></li>
-              <li><%= link_to "Registro Instructoras", signup_path %></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Accion</a></li>
-                  <li><a href="#">Accion</a></li>
-                  <li><a href="#">Accion</a></li>
-                  <li class="divider"></li>
-                  <li class="nav-header">Navegación</li>
-                  <li><a href="#">Vínculo</a></li>
-                  <li><a href="#">Vìnculo</a></li>
-                </ul>
+              <li class="active" style="font-size:25px; font-weight:bold;">
+              	<%= link_to "ANIPP", root_path %>
+              </li>
+              <li style="font-size:18px; font-style:italic;">
+              	<%= link_to "Quíenes somos", '#' %>
+              </li>
+              <li style="font-size:18px; font-style:italic;">
+              	<%= link_to "Contáctanos", users_path %>
               </li>
             </ul>
-            <form class="navbar-form pull-right">
+          </div>
+          <div class="nav-collapse pull-right" style="margin-right: 80px;">
+            <ul class="nav">   
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                	<strong style="font-size:18px;">Instructora </strong><b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                <% if signed_in? %>
+                  <li><%= link_to "Actualiza tu Registro", user_path(current_user) %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to "Salir", signout_path, method: "delete" %></li>
+                <% else %>
+                  <li><%= link_to "Registro Instructoras", signup_path %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to "Ingreso Instructoras", signin_path %></li>
+                <% end %>  
+              </li>
+            </ul>
+            <!--<form class="navbar-form pull-right">
               <input class="span2" type="text" placeholder="Email">
               <input class="span2" type="password" placeholder="Password">
               <button type="submit" class="btn">Entrar</button>
-            </form>
-          </div><!--/.nav-collapse -->
+            </form>-->
+          </div>
         </div>
       </div>
     </div>
 	<div class='container'>
 		<%= yield %>
+		<%= yield :scripts%>
     	<%= debug(params) if Rails.env.development? %>
 	</div>
   <script>

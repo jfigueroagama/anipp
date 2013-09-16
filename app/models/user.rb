@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :location, allow_destroy: true  
   
   before_save { |user| user.email = email.downcase }
+  before_save :create_remember_token
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :email, presence: true, uniqueness: { case_sensitive: false }
@@ -23,4 +24,10 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
   validates :telephone, presence: true, length: { maximum: 14 }
+  
+  private
+  
+  def create_remember_token
+    self.remember_token = SecureRandom.urlsafe_base64
+  end
 end

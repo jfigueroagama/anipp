@@ -1,0 +1,16 @@
+<div class="container">   
+      <div class="form-signin">
+        <h2 class="form-signin-heading">Ingreso Instructoras</h2>
+	    <%= form_for :session, url: sessions_path do |f| %>
+
+	        <%= f.label :email, "Correo" %>
+	        <%= f.text_field :email, class: "input-block-level" %>
+	        
+	        <%= f.label :password, "Password" %>
+	        <%= f.password_field :password, class: "input-block-level" %>
+
+	        <br />
+	        <%= f.submit "Ingresar", class: "btn btn-large btn-primary" %>      
+        <% end %>
+      </div>
+</div> <!-- /container -->
