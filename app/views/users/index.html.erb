@@ -31,12 +31,13 @@
 		<% end %>
 		<% else %>
 		<% @users.each do |user| %>
+			<% mylocation = user.location %>
 		  <tr>
 		    <td><%= user.location.center_name %></td>
 		    <td><%= user.name %></td>
 		    <td><%= user.telephone %></td>
 		    <td><%= user.email %></td>
-		    <td><%= link_to user.location.address, user.location %></td>
+		    <td><%= link_to user.location.address, mylocation.user %></td>
 		  </tr> 
 		<% end %>
 		<% end %>
