@@ -12,12 +12,8 @@
 		<!--<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=550x400&sensor=true&zoom=16&markers=#{@user.location.latitude}%2C#{@user.location.longitude}" %>-->
 		<br />
 		<h3>Instructoras Cercanas:</h3>
-		<% if @user.location.nearbys.empty? %>
-			<li> No hay instructoras cercanas </li>
-		<% else %> 
 			<% for location in @user.location.nearbys(5) %>
 				<li><%= location.user.name %>&nbsp;&nbsp;&nbsp;<%= link_to location.address, location.user %></li>
 			<% end %>
-		<% end %>
 	</div>
 </div>

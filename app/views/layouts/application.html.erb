@@ -37,7 +37,7 @@
                 </a>
                 <ul class="dropdown-menu">
                 <% if signed_in? %>
-                  <li><%= link_to "Actualiza tu Registro", user_path(current_user) %></li>
+                  <li><%= link_to "Actualiza tu Registro", edit_user_path(current_user) %></li>
                   <li class="divider"></li>
                   <li><%= link_to "Salir", signout_path, method: "delete" %></li>
                 <% else %>

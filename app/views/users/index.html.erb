@@ -12,11 +12,13 @@
 		<table border="1">
 		  <tr>
 		    <th><h3>&nbsp;Centro&nbsp;</h3></th>
-		    <th><h3>&nbsp;Instructora&nbsp;</h3></th>
+		    <th><h3>&nbsp;Instructora&nbsp;&nbsp;</h3></th>
 		    <th><h3>&nbsp;Teléfono&nbsp;</h3></th>
 		    <th><h3>&nbsp;Correo&nbsp;</h3></th>
 		    <th><h3>&nbsp;Dirección&nbsp;</h3></th>
 		  </tr>
+		  
+		<% if !@locations.nil? %>  
 		
 		<% @locations.each do |location| %>
 		  <tr>
@@ -25,7 +27,18 @@
 		    <td><%= location.user.telephone %></td>
 		    <td><%= location.user.email %></td>
 		    <td><%= link_to location.address, location.user %></td>
-		  </tr>
+		  </tr> 
+		<% end %>
+		<% else %>
+		<% @users.each do |user| %>
+		  <tr>
+		    <td><%= user.location.center_name %></td>
+		    <td><%= user.name %></td>
+		    <td><%= user.telephone %></td>
+		    <td><%= user.email %></td>
+		    <td><%= link_to user.location.address, user.location %></td>
+		  </tr> 
+		<% end %>
 		<% end %>
 		</table>
 	</div>

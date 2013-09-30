@@ -57,13 +57,11 @@
 
 <!-- Example row of columns -->
 <div class="row" id="sponsors">
-	<br />
-	<a class="brand pull-right"><%= link_to image_tag("anipp.png", alt: "ANIPP", size: "90x100"), root_path %></a>
+	<!--<a class="brand"><%= link_to image_tag("anipp.png", alt: "ANIPP", size: "90x100"), root_path %></a>-->
     <div class="span4">
         <h2>Chicco</h2>
         <p><%= link_to image_tag("chicco.jpg", alt: "Chicco", size: "100x100"), "http://www.chicco.com.mx" %></p>
         <br />
-        <p><a class="btn btn-primary" href="#">Detalles &raquo;</a></p>
     </div>
     <div class="span4">
         <h2>CryoCell</h2>
@@ -71,7 +69,6 @@
         <p><%= link_to image_tag("logoCCell.jpg", alt: "CryoCell", size: "130x120"), "http://www.cryo-cell.com.mx" %></p>
         <br />
         <br />
-        <p><a class="btn btn-primary" href="#">Detalles &raquo;</a></p>
     </div> 
     <div class="span4">
         <h2>Huggies</h2>
@@ -79,7 +76,13 @@
         <p><%= link_to image_tag("Huggies.jpg", alt: "Huggies", size: "150x150"), "http://www.huggies.com.mx" %></p>
         <br />
         <br />
-        <p><a class="btn btn-primary" href="#">Detalles &raquo;</a></p>
+        <!--<p><a class="btn btn-primary" href="#">Detalles &raquo;</a></p>-->
+    </div>
+    <div class="brand pull-right">
+        <br />
+        <p><%= link_to image_tag("anipp.png", alt: "ANIPP", size: "90x100"), root_path %></p>
+        <br />
+        <br />
     </div>
 </div>
 

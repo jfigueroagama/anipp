@@ -1,0 +1,46 @@
+<div class="container">   
+      <div class="form-signin">
+        <h2 class="form-signin-heading">Actualiza tu Registro</h2>
+	    <%= form_for @user do |f| %>
+	    	<%= render 'shared/error_messages' %>
+	        <%= f.label :name, "Nombre" %>
+	        <%= f.text_field :name, class: "input-block-level" %>
+
+	        <%= f.label :email, "Correo" %>
+	        <%= f.text_field :email, class: "input-block-level" %>
+	        
+	        <%= f.label :telephone, "Telefono" %>
+	        <%= f.text_field :telephone, class: "input-block-level" %>
+
+	        <%= f.label :password, "Password" %>
+	        <%= f.password_field :password, class: "input-block-level" %>
+
+	        <%= f.label :password_confirmation, "Confirme Password" %>
+	        <%= f.password_field :password_confirmation, class: "input-block-level" %>
+	        
+	        <%= f.fields_for :location do |builder| %>
+	        	<fieldset>
+	        			<%= builder.label :center_name, "Nombre del Centro" %>
+	        			<%= builder.text_field :center_name, class: "input-block-level" %>
+	        			
+	        			<%= builder.label :street, "Calle y No" %>
+	        			<%= builder.text_field :street, class: "input-block-level" %>
+	        			
+	        			<%= builder.label :city, "Ciudad" %>
+	        			<%= builder.text_field :city, class: "input-block-level" %>
+	        			
+	        			<%= builder.label :state, "Estado" %>
+	        			<%= builder.select(:state, ["Aguascalientes", "Baja California Norte", "Baja California Sur",
+	        				                        "Campeche", "Chiapas", "Chihuahua", "Coahuila", "Colima",
+	        				                        "Distrito Federal", "Durango", "Estado de México", "Guanajuato",
+	        				                        "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos",
+	        				                        "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Queretaro",
+	        				                        "Quintana Roo", "San Luis Potosí", "Sinaloa", "Sonora", "Tabasco",
+	        				                        "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas"], class: "input-block-level") %>
+	        	</fieldset>
+	        <% end %>
+	        <br />
+	        <%= f.submit "Guardar Cambios", class: "btn btn-large btn-primary" %>      
+        <% end %>
+       </div>
+</div> <!-- /container -->

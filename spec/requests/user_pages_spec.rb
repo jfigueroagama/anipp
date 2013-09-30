@@ -37,4 +37,18 @@ describe "User pages" do
   	end
 
   end
+  
+  describe "update" do
+    let(:user) { FactoryGirl.create(:user) }
+    before { visit edit_user_path(user) }
+    
+    it { should have_selector('h2', text: 'Actualiza tu Registro') }
+    
+    describe "with invalid information" do
+      before { click_button 'Guardar Cambios' }
+      
+      it { should have_content('error')}
+    end
+  end
+  
 end

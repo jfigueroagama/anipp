@@ -20,25 +20,23 @@ describe "Authentication Pages" do
     end
     
     describe "with valid information" do
-      let(:user) { FactoryGirl.create(:user) }
+      let(:user) { FactoryGirl.create(:user) } 
       
       before do
-        location = user.build_location(street: "Division del Norte 712", city: "Mexico", state: "Distrito Federal", latitude: 19.40, longitude: -99.16, 
-        center_name: "Parto Natural", user_id: user.id)
-        
-        fill_in "Correo",   with: user.email.upcase
-        fill_in "Password", with: user.password
-        click_button "Ingresar"
+        @location = user.build_location(street: "Division del Norte 712", city: "Mexico", state: "Distrito Federal", latitude: 19.40, longitude: -99.16, 
+          center_name: "Parto Natural", user_id: user.id)
+        sign_in user
       end
       
       #it { should have_content(user.name) }
-      #it { should have_link('Actualiza tu Registro', href: user_path(user)) }
+      #it { should have_link('Actualiza tu Registro', href: edit_user_path(user)) }
       #it { should have_link('Salir', href: signout_path) }
       #it { should_not have_link('Ingreso Instructoras', href: signin_path) }
       
       describe "followed by sign out" do
         before { click_link "Salir" }
         #it { should have_link('Ingreso Instructoras')}
+        #it { should have_link('Registro Instructoras')}
       end
     end     
   end
