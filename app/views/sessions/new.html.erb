@@ -1,8 +1,11 @@
 <div class="container">   
       <div class="form-signin">
+      	<% if flash[:error] %>
+				<div class="alert alert-error"><%= flash[:error] %></div>
+		<% end %>
         <h2 class="form-signin-heading">Ingreso Instructoras</h2>
 	    <%= form_for :session, url: sessions_path do |f| %>
-
+			
 	        <%= f.label :email, "Correo" %>
 	        <%= f.text_field :email, class: "input-block-level" %>
 	        

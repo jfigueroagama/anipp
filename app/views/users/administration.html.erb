@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="form-signin">
+		<% if flash[:alert] %>
+				<div class="alert alert-alert"><%= flash[:alert] %></div>
+		<% end %>
+		<h2>Administrar Instructoras<small> para administradora de ANIPP</small></h2>
+		<br />
+		<br />
+		<%= will_paginate previous_label: "Anterior", next_label: "Siguiente" %>
+		<ul class="users">
+		  <% @users.each do |user| %>
+		    <li>
+		      <%= link_to user.name, user %>  |
+		      <%= user.location.center_name %>   |
+		      <%= user.email %>
+		      <% if current_user.admin? && !current_user?(user) %>
+					| <%= link_to "Eliminar", user, method: :delete, data: { confirm: "Seguro?" } %>
+			  <% end %>
+		    </li><br />
+		  <% end %>
+		</ul>
+	</div>
+</div>

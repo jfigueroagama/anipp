@@ -2,4 +2,51 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      user: "Usuario"
+      location: "Localización"
+    attributes:
+      user:
+        name: "Nombre"
+        email: "Correo"
+        password_digest: "Password"
+        password: "Password"
+        password_confirmation: "Confirmación"
+        telephone: "Teléfono"
+      location:
+        street: "Calle y No"
+        city: "Ciudad"
+        state: "Estado"
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: " es obligatorio"
+              too_long: " debe tener como máximo 50 caracteres"
+            email:
+              blank: " es obligatorio"
+              invalid: " inválido"
+            password_digest:
+              blank: " no puede estar en blanco"
+            password:
+              blank: " obligatoria"
+              too_short: " debe tener como mínimo 6 caractéres"
+            password_confirmation:
+              blank: " de password obligatoria"
+              confirmation: " no es igual al password"
+            telephone:
+              blank: " es obligatorio"
+              too_long: " debe tener como máximo 14 caractéres"
+        location:
+          attributes:
+            street:
+              blank: " son obligatorios"
+              too_long: " debe tener como máximo 50 caractéres"
+            city:
+              blank: " es obligatoria"
+              too_long: " debe tener como máximo 30 caractéres"
+            state:
+              blank: " debe seleccionarse"
+            

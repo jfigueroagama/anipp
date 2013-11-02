@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+# Defining the Admin
+#
+user_admin = User.where({email: "almaluzgarcia@yahoo.com.mx"}).first
+user_admin.toggle!(:admin)

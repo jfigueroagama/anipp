@@ -9,6 +9,12 @@
 		  </p>
 		<% end %>
 		
+		<% if !@users.nil? %>
+		
+			<%= will_paginate previous_label: "Anterior", next_label: "Siguiente" %>
+		
+		<% end%>
+		
 		<table border="1">
 		  <tr>
 		    <th><h3>&nbsp;Centro&nbsp;</h3></th>

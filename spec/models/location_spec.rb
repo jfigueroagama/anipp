@@ -30,7 +30,7 @@ describe Location do
     end
     
     describe "when street is too long" do
-      before { @location.street = "a" * 51 }
+      before { @location.street = "a" * 71 }
       it { should_not be_valid }
     end
     
@@ -46,11 +46,6 @@ describe Location do
     
     describe "when state is not present" do
       before { @location.state = " " }
-      it { should_not be_valid }
-    end
-    
-    describe "when state is too long" do
-      before { @location.state = "a" * 26 }
       it { should_not be_valid }
     end
     

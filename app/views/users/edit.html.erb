@@ -2,7 +2,7 @@
       <div class="form-signin">
         <h2 class="form-signin-heading">Actualiza tu Registro</h2>
 	    <%= form_for @user do |f| %>
-	    	<%= render 'shared/error_messages' %>
+	    	<%= render 'shared/error_messages', object: f.object %>
 	        <%= f.label :name, "Nombre" %>
 	        <%= f.text_field :name, class: "input-block-level" %>
 

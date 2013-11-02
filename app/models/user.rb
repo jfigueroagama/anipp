@@ -12,13 +12,13 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :telephone, :password_confirmation, :location_attributes
   has_secure_password
-  has_one :location, dependent: :destroy
+  has_one :location, dependent: :destroy, inverse_of: :user
   accepts_nested_attributes_for :location, allow_destroy: true  
   
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
 
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 60 }
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates :password, presence: true, length: { minimum: 6 }

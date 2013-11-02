@@ -8,10 +8,25 @@ AnippApp::Application.routes.draw do
 
   root to: 'static_pages#home'
 
-  match  '/signup',  to: 'users#new'
+  get    '/signup',  to: 'users#new'
+  get    '/admin',   to: 'users#administration'
   get    '/signin',  to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
 
+  # we can also define a route to an action in a controller with
+  # resources :users do
+  #   member do
+  #   post :administration
+  #   end
+  # end
+  # we can also use
+  # resources :users do
+  #  collection do
+  #  get :administration
+  #  end
+  # end
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -6,6 +6,9 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -22,9 +25,6 @@
               	<%= link_to "ANIPP", root_path %>
               </li>
               <li style="font-size:18px; font-style:italic;">
-              	<%= link_to "Quíenes somos", '#' %>
-              </li>
-              <li style="font-size:18px; font-style:italic;">
               	<%= link_to "Contáctanos", users_path %>
               </li>
             </ul>
@@ -38,6 +38,10 @@
                 <ul class="dropdown-menu">
                 <% if signed_in? %>
                   <li><%= link_to "Actualiza tu Registro", edit_user_path(current_user) %></li>
+                  <% if is_admin? %>
+                   <li class="divider"></li>
+                  <li><%= link_to "Administrar Instructoras", admin_path %></li>
+                  <% end %>
                   <li class="divider"></li>
                   <li><%= link_to "Salir", signout_path, method: "delete" %></li>
                 <% else %>
