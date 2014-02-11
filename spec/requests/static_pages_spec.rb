@@ -20,4 +20,9 @@ describe "StaticPages" do
     #end
 
   end
+  
+  describe "About page" do
+    before { visit about_path }
+      
+  end
 end
